@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        {% for about in object_list %}
+        <div class="row">
+            <div class="col-4 text-center">
+                <img src="{{ about.profile_image.url }}" width="75%">
+            </div>
+            <div class="col-8">
+                <h2>{{ about.title }}</h2>
+                {{ about.content | safe }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+
+</html>
